@@ -35,8 +35,16 @@
           importer.useFullSchemaName directs the importer to drop the source 
           schema from the Teiid object name, so that the Teiid fully qualified name
           will be in the form of <model name>.<table name>
+
+          DO NOT TURN OFF fully qualified names for "Accounts", because when two tables
+          with the same names gets imported it leads to:
+
+          TEIID31080 Stocks.Stock validation error: Group does not exist: Accounts.PRODUCT AS A
+          TEIID31080 OtherHoldings.PersonalHoldings validation error: Group does not exist: Accounts.Account AS B
+
+          errors
         -->
-        <property name="importer.useFullSchemaName" value="false"/>
+        <property name="importer.useFullSchemaName" value="true"/>
         <!-- Prevents MySQL integer from being interpreted as long. -->
         <property name="importer.widenUnsignedTypes" value="false"/>
            
