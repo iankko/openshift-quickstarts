@@ -24,9 +24,9 @@
     xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
     <xa-datasource jndi-name="java:jboss/datasources/JTACrashRecQuickstartDS" pool-name="JTACrashRecQuickstart" enabled="true" use-ccm="false">
         <xa-datasource-property name="URL">
-            jdbc:h2:file:${jboss.server.data.dir}/jta-crash-rec-quickstart;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+            postgresql://postgresql:5432/;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
         </xa-datasource-property>
-        <driver>h2</driver>
+        <driver>postgres</driver>
         <xa-pool>
             <is-same-rm-override>false</is-same-rm-override>
             <interleaving/>
@@ -34,8 +34,8 @@
             <wrap-xa-resource>true</wrap-xa-resource>
         </xa-pool>
         <security>
-            <user-name>sa</user-name>
-            <password>sa</password>
+            <user-name>admin</user-name>
+            <password>redhat</password>
         </security>
         <validation>
             <validate-on-match>false</validate-on-match>
@@ -47,8 +47,8 @@
         </statement>
         <recovery>
             <recover-credential>
-                <user-name>sa</user-name>
-                <password>sa</password>
+                <user-name>admin</user-name>
+                <password>redhat</password>
             </recover-credential>
         </recovery>
     </xa-datasource>
