@@ -26,7 +26,7 @@
         <xa-datasource-property name="URL">
             postgresql://postgresql:5432/;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
         </xa-datasource-property>
-        <driver>postgres</driver>
+        <driver>postgresql</driver>
         <xa-pool>
             <is-same-rm-override>false</is-same-rm-override>
             <interleaving/>
