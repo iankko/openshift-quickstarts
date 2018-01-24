@@ -184,6 +184,9 @@ public class XAService {
 
             result.append(listPairs());
 
+            // Pause for 3 hours before commit
+            Thread.sleep(10800000);
+
             userTransaction.commit();
         } catch (Exception e) {
             result.append(e.getCause() != null ? e.getCause().getMessage() : e.getMessage());
